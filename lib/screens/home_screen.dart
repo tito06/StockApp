@@ -225,15 +225,6 @@ class HomeScreen extends ConsumerWidget {
                     const Text("Logout", style: TextStyle(color: Colors.red)),
                 onTap: () {
                   AuthService().logout();
-                  ref.read(authProviders.notifier).state = false;
-                  Navigator.of(context).pop(); // Close the drawer
-                  Future.delayed(const Duration(milliseconds: 300), () {
-                    Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(builder: (context) => LoginScreen()),
-                      (route) => false,
-                    );
-                  });
                 },
               ),
               const SizedBox(height: 20),
